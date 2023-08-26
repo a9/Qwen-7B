@@ -215,6 +215,7 @@ if __name__ == "__main__":
     model = AutoModelForCausalLM.from_pretrained(
         args.checkpoint_path,
         device_map=device_map,
+        offload_folder="offload_folder",
         trust_remote_code=True,
         resume_download=True,
     ).eval()
